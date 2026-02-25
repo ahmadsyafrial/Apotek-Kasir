@@ -28,9 +28,7 @@ include "Layout/sidebar.php";
     <!-- Main Content -->
     <main class="main-content">
 
-        <?=
-        include "Layout/topbar.php";
-        ?>
+
         <!-- Content Area -->
         <div class="content-area">
 
@@ -53,28 +51,10 @@ include "Layout/sidebar.php";
                                     type="text"
                                     class="search-input"
                                     id="searchInput"
-                                    placeholder="Cari produk (ketik nama produk dan tekan Enter)..."
-                                    onkeypress="app.handleSearchKeypress(event)">
+                                    placeholder="Cari produk (ketik nama produk dan tekan Enter)...">
                                 <button class="clear-search" id="clearSearch" onclick="app.clearSearch()">❌</button>
                                 <button class="search-btn" onclick="app.searchProducts()">Cari</button>
                             </div>
-
-                            <div class="member-section">
-                                <div class="member-toggle">
-                                    <button class="toggle-btn active" id="btnNonMember" onclick="app.setMemberType('non-member')">Non-Member</button>
-                                    <button class="toggle-btn" id="btnMember" onclick="app.setMemberType('member')">Member</button>
-                                </div>
-                                <div class="member-search" id="memberSearch">
-                                    <input
-                                        type="text"
-                                        class="member-input"
-                                        id="memberInput"
-                                        placeholder="Nama / No HP Member"
-                                        onkeypress="app.searchMemberKeypress(event)">
-                                    <button class="search-btn-member" onclick="app.searchMember()">Cari</button>
-                                </div>
-                            </div>
-                            <div class="member-info" id="memberInfo"></div>
                         </div>
 
                         <div class="products-grid">
@@ -128,6 +108,23 @@ include "Layout/sidebar.php";
                                     <span>📱</span>
                                     <div>E-Wallet</div>
                                 </div>
+
+                                <div class="member-section">
+                                    <div class="member-toggle">
+                                        <button class="toggle-btn active" id="btnNonMember" onclick="app.setMemberType('non-member')">Non-Member</button>
+                                        <button class="toggle-btn" id="btnMember" onclick="app.setMemberType('member')">Member</button>
+                                    </div>
+                                    <div class="member-search" id="memberSearch">
+                                        <input
+                                            type="text"
+                                            class="member-input"
+                                            id="memberInput"
+                                            placeholder="Nama / No HP Member"
+                                            onkeypress="app.searchMemberKeypress(event)">
+                                        <button class="search-btn-member" onclick="app.searchMember()">Cari</button>
+                                    </div>
+                                </div>
+                                <div class="member-info" id="memberInfo"></div>
                             </div>
 
                             <div class="cash-input-container" id="cashInputContainer">
@@ -159,7 +156,7 @@ include "Layout/sidebar.php";
             </div>
 
             <!-- Product Detail Modal -->
-            <div class="modal-overlay" id="productModal">
+            <div class="modal-overlay" id="modalOverlay">
                 <div class="modal product-detail-modal">
                     <div class="modal-header">
                         <div class="modal-title">Detail Produk</div>
@@ -199,14 +196,14 @@ include "Layout/sidebar.php";
             <!-- Toast Notification -->
             <div class="toast" id="toast">
                 <span id="toastMessage"></span>
-                <button class="toast-undo" id="toastUndo" onclick="app.undoLastAction()">Undo</button>
+                <button class="toast-undo" id="toastUndo">Undo</button>
             </div>
 
-            <script src="js/kasir.js"></script>
+
         </div>
 
         <!-- JavaScript -->
-        <script src="js/main.js"></script>
+        <script src="js/kasir.js"></script>
     </main>
 </body>
 
